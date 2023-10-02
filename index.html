@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>ToDo List</title>
+    <script type="module" crossorigin src="/assets/index-f8358b41.js"></script>
+    <link rel="stylesheet" href="/assets/index-994fd49c.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="form">
+        <div class="titleAndChangeTheme">
+          <h1 class="form__title">ToDo List</h1>
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAABMZJREFUaEPtmWfIf2MYxz9/e2fL3lFGNhFKFF54808ioWSVSEZkZUTGCyPJSEZG8oJQMsoue5YVGdl7j6w+dd26Hef3O/dZj39P/+vN85xz7vu6r+997es3h1lCc2YJDuYDmdc0ORMaWTBA/zEm+LGBLAb8HAB2Bh4fC8wQQPYCzga2rRGyBMhdwB3ATX1A9gVyDnBaCLA58EpFmCYgKwOfxh7B7NsVTF8g2v9vwALAx8BqLYE8B2wVe5YCfvy/gHju8cDFIcAewIOZMF7ULvH8AvBd9m0j4PV4vgY4vCsI9/XVSDr7F+AjYHfgnUKBNKv7AU1yEeD3wn21y9oAORM4F6gLoysAX9acIH+F9K8m+GfNmhWBLybs9bxTSwCWAtkNeCiEMTq9PIX5GsCFwD7AkpV1au4B4ATgzSk81orAsQxwGHBtE5hSIIZIBUt0CXBchblCmye2aDo0vmuCOwCfV9afGBeRXj8NbN/EsxSIfARyZ+ZX6wLvxgGbAi9F9PLVX4ACXA+8GM+bAAcDJsb8XP1KbUtq4Jvs+xHA1U0guji7IVKzui78RR6rAh9mh2sGR01xXkP1+cBJmYCbAa/G8/7AZYDAPysB0QVIHV9NQ4eVzPL3FR6+NfBsrNV3lgjNFW7/97I2plV3wN7AvfHhZOCCllLsB9wWe44BLm+5/5/lfYEYeTYEvNHFOwqRNPo1sHxHHr0SopdgTvHvFcDRHYVQE5fG3oW7JsYmjVjQLVsRcPVIYGrgp/i2E/BkRyBrZ9HPWs2aTUA/VPiZ+at5qdi0VHcVyEoBRAdPOWD9FqVJFe/SWQ22MfBGALESyEkgAqylJo0Yw6u3cCTwPZALkIfPtorxYlKYXQd4D1gIuKHCSDM+qCuQaUKZD1LddWzE/rYgXJ9HPkNw6ihb8WrSSBOzr4Dlwqw0ry70aGR7TWnRLgzc0xfIWcAZcbiALC/akDaffOFW4IA2m/O1XYC4x1pKyltZM7qZvQ1dCehz0iptSpLqIW2A2Fc4ZLAE165tiiR77bnxv6H0/UIkFojfxtpngO0yQK8BVsEWnUVjpBIgRq1bKmX8J1EserZ2rYPK6wPAXqKEFH6bWGgoT43Z7dkQQs3fE1WzqWAilQBRUEuQRG8BVqgODhKdApwXD05C1NI08vafigVWyzZPiQ4FLoogkt41+l8JEJndHf5gHDfz1pG5xTK/JPp4+9ZVJjkvqq4FXg+4CjC3WM9NpVIgTXz8vivwcCy0gbpxwianKo/Et0NqEl91Wx5cJsoxJBAPcYiQBhGpR6ke7gjIUdCvoeWSS2pcMzQQNWGkkeqydF4NOCE5vVHCwgVDA1H4NC2sq4jXzMKzVbSzsEFoaCAKlRzXvl1nzUlwj8ULs3pRjihBOgaQxDNl/zrn9d2k7yVy/2fNGECM+c630g881UMFsGeU652Erts0BpAdgScaJDwQuHkwFANUv5NksTGaRr0G1jOlEU3q+egg6840f2xZKXt6K2cM09JHbLim0QbA272lzxiMAUT2amUSb519sLCbsIwFxELQnqI6uLCgdKab/3I1iGLGAqJwdo/2J6nmsg02s1fnVfM8kCSgnaA0uBbyGxhTI4PcdCmT+UBKb2qm1s0ajfwNbATTM2JENzoAAAAASUVORK5CYII="
+            alt="change_theme"
+            class="theme"
+          />
+        </div>
+
+        <form id="todoForm">
+          <input type="text" id="taskInput" placeholder="Введите задачу" />
+          <button type="button" id="addTask">Добавить задачу</button>
+        </form>
+      </div>
+      <div class="tasks__wrapper">
+        <ul id="taskList"></ul>
+      </div>
+    </div>
+  </body>
+  
+</html>
