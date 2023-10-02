@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style.scss" />
+    <title>ToDo List</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="form">
+        <div class="titleAndChangeTheme">
+          <h1 class="form__title">ToDo List</h1>
+          <img
+            src="public/pngwing.com (5).png"
+            alt="change_theme"
+            class="theme"
+          />
+        </div>
+
+        <form id="todoForm">
+          <input type="text" id="taskInput" placeholder="Введите задачу" />
+          <button type="button" id="addTask">Добавить задачу</button>
+        </form>
+      </div>
+      <div class="tasks__wrapper">
+        <ul id="taskList"></ul>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="main.js"></script>
+</html>
