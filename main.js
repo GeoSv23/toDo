@@ -38,7 +38,7 @@ function updateTaskList() {
     });
 
     const changeButton = document.createElement('img');
-    changeButton.src = 'public/pngwing.com (3).png';
+    changeButton.src = 'pngwing.com (3).png';
     changeButton.alt = 'Измеить'
     changeButton.addEventListener('click', function () {
         changeButton.classList.add('img_change')
@@ -54,7 +54,7 @@ function updateTaskList() {
 
 
     const deleteButton = document.createElement('img');
-    deleteButton.src = 'public/pngwing.com (2).png'
+    deleteButton.src = 'pngwing.com (2).png'
     deleteButton.alt = 'Удалить'
     deleteButton.addEventListener('click', function () {   
       newTask.className = 'removing'
