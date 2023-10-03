@@ -27,7 +27,7 @@ function updateTaskList() {
 
 
     const pointButton = document.createElement('img');
-    pointButton.src = 'public/pngwing.com (1).png';
+    pointButton.src = 'pngwing.com (1).png';
     pointButton.alt = 'Выполнено'
 
     pointButton.addEventListener('click', function () {
