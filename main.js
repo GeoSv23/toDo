@@ -28,6 +28,7 @@ function updateTaskList() {
 
     const pointButton = document.createElement('img');
     pointButton.src = 'public/pngwing.com (1).png';
+    pointButton.alt = 'Выполнено'
 
     pointButton.addEventListener('click', function () {
       if (!tasks[i].completed) {
@@ -38,7 +39,7 @@ function updateTaskList() {
 
     const changeButton = document.createElement('img');
     changeButton.src = 'public/pngwing.com (3).png';
-    
+    changeButton.alt = 'Измеить'
     changeButton.addEventListener('click', function () {
         changeButton.classList.add('img_change')
         const newValue = prompt('Введите новое значение задачи');
@@ -54,7 +55,7 @@ function updateTaskList() {
 
     const deleteButton = document.createElement('img');
     deleteButton.src = 'public/pngwing.com (2).png'
-
+    deleteButton.alt = 'Удалить'
     deleteButton.addEventListener('click', function () {   
       newTask.className = 'removing'
       deleteButton.classList.add('img_del')
