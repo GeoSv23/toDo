@@ -1,6 +1,5 @@
 import '/style.scss'
 
-
 const tasks = [];
 
 function addTask() {
@@ -8,7 +7,7 @@ function addTask() {
   const taskText = input.value.trim();
 
   if (taskText !== '') {
-    tasks.push({ text: taskText, completed: false ,});
+    tasks.unshift({ text: taskText, completed: false , nonVisibility: false});
     input.value = '';
     updateTaskList();
   }
@@ -21,6 +20,8 @@ function updateTaskList() {
   for (let i = 0; i < tasks.length; i++) {
     const newTask = document.createElement('li');
     const taskHolder = document.createElement('p')
+
+    
     newTask.append(taskHolder)
     taskHolder.textContent = `${i + 1} .${tasks[i].text}`;
     newTask.className = 'task-item'; // Добавляем класс для анимации
@@ -31,8 +32,12 @@ function updateTaskList() {
     pointButton.alt = 'Выполнено'
 
     pointButton.addEventListener('click', function () {
-      if (!tasks[i].completed) {
+      if (!tasks[i].completed && !tasks[i].nonVisibility) {
         tasks[i].completed = true;
+        tasks[i].nonVisibility = true;
+        let position = tasks.splice(i, 1);
+        tasks.push(position[0]);
+    
       };
       updateTaskList();
     });
@@ -66,10 +71,13 @@ function updateTaskList() {
 });
 
 
-    if (tasks[i].completed) {
+    if (tasks[i].completed && tasks[i].nonVisibility) {
       taskHolder.classList.add('completed'); // Добавляем класс для перечеркивания текста
+      taskHolder.classList.add('nonvis');
       pointButton.classList.add('img_done')
-
+      const parentElement = taskHolder.parentNode;
+      parentElement.classList.add('green');
+      
     }
 
     newTask.appendChild(pointButton);

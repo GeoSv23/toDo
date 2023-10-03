@@ -7,7 +7,12 @@
   font-weight: 400;
   font-style: normal;
 }
+body {
+  margin: 0px;
+}
+
 .wrapper {
+  padding: 20px;
   font-family: "Gilroy";
   background-color: white;
   background-position: 0%;
@@ -17,6 +22,10 @@
   flex-direction: column;
   align-items: center;
   height: 1000px;
+}
+
+.wrapper.black {
+  padding: 20px;
 }
 
 .black {
@@ -62,7 +71,6 @@ img {
 }
 
 .form {
-  box-shadow: 0px 0px 20px black;
   background-color: white;
   border: 1px solid;
   border-radius: 20px;
@@ -72,7 +80,6 @@ img {
 }
 
 .tasks__wrapper {
-  box-shadow: 0px 0px 20px black;
   background-color: white;
   border: 1px solid;
   border-radius: 20px;
@@ -122,13 +129,20 @@ li {
   background-color: #45a049;
 }
 
+.nonvis {
+  opacity: 0.2;
+}
+
+.task-item.green {
+  background-color: #3fd13f;
+}
+
 .task-item {
   opacity: 1;
-  transform: translateY(20px);
 }
 
 .removing {
-  transform: scale(0.5);
+  opacity: 0;
   transition: 1300ms;
 }
 
