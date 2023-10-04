@@ -97,8 +97,9 @@ const form = document.querySelector('.form');
 const tasksWrapper = document.querySelector('.tasks__wrapper')
 
 const themeChanger = document.querySelector('.theme')
+const bodyd = document.body
 themeChanger.addEventListener('click', function () {
-    wrapper.classList.toggle('black')
+    bodyd.classList.toggle('black')
     form.classList.toggle('black')
     tasksWrapper.classList.toggle('black')
 

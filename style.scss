@@ -9,12 +9,9 @@
 }
 body {
   margin: 0px;
-}
-
-.wrapper {
   padding: 20px;
   font-family: "Gilroy";
-  background-color: white;
+  background-color: #a3f7a2;
   background-position: 0%;
   // background-image: url(public/pngwing.com\ \(4\).png);
   background-repeat: round;
@@ -24,17 +21,25 @@ body {
   height: 1000px;
 }
 
-.wrapper.black {
-  padding: 20px;
+.wrapper {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  max-width: 350px;
 }
 
 .black {
-  background-color: #414134;
+  background-color: #ffffff;
 }
 
 .titleAndChangeTheme {
   display: flex;
   justify-content: space-between;
+  margin: 10px;
+}
+
+#todoForm {
+  margin: 10px;
 }
 
 .theme {
@@ -43,13 +48,16 @@ body {
 }
 
 .theme:hover {
-  background-color: yellow;
-  border-radius: 50%;
+  opacity: 0.2;
 }
 
 img {
   width: 20px;
   height: 20px;
+}
+
+img:hover {
+  cursor: pointer;
 }
 
 .img_done {
@@ -71,40 +79,51 @@ img {
 }
 
 .form {
-  background-color: white;
-  border: 1px solid;
-  border-radius: 20px;
-  padding: 20px;
-
-  margin-bottom: 20px;
+  background-color: #4b4a4a;
+  box-shadow: 0px 20px 60px;
+  border-radius: 10px;
+  // width: 100%;
+  margin: 10px;
+  min-width: 100%;
 }
 
 .tasks__wrapper {
-  background-color: white;
-  border: 1px solid;
-  border-radius: 20px;
-  padding: 20px;
+  // width: 100%;
+  min-width: 100%;
+  box-shadow: 0px 20px 60px;
+  border-radius: 10px;
+  background-color: #4b4a4a;
+  padding: 0px;
   min-height: 400px;
+  margin: 10px;
 }
 
 ul {
   list-style-type: none;
   padding: 10px;
-  width: 300px;
+
   /* display: flex; */
-  margin: 0px auto;
+  margin: 20px 0px;
 }
 
 li {
   color: #060606;
+  box-shadow: 0px 0px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 5px 0;
   padding: 10px;
   background-color: #675f5f;
-  border: 1px solid #ddd;
+  border: 1px solid #000000;
   border-radius: 5px;
+}
+
+.zaglushka {
+  background-color: #4b4a4a;
+  text-align: center;
+  font-family: "Gilroy";
+  text-transform: uppercase;
 }
 
 /* Стили для кнопки удаления */
@@ -155,8 +174,12 @@ li {
   min-width: 130px;
 }
 
+.removing p {
+  min-width: 130px;
+}
+
 .black {
-  background-color: #414134;
+  background-color: #ffffff;
 }
 #todoForm {
   display: flex;
@@ -177,10 +200,10 @@ li {
   }
 
   .form {
-    width: 89%;
+    width: 100%;
   }
 
   .form.black {
-    width: 89%;
+    width: 100%;
   }
 }
