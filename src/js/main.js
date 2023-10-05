@@ -50,7 +50,9 @@ function updateTaskList() {
     });
 
     const deleteButton = document.createElement("img");
-    deleteButton.src = "src/public/images/delete.png";
+    deleteButton.src = `${
+      import.meta.env.VITE_BASE_URL
+    }src/public/images/delete.png`;
     deleteButton.alt = "Удалить";
     deleteButton.addEventListener("click", function () {
       newTask.className = "removing";
