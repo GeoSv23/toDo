@@ -1,3 +1,7 @@
+import deleteImg from "@images/delete.png";
+import pencilImg from "@images/pencil.png";
+import doneImg from "@images/done.png";
+
 const tasks = [];
 
 function addTask() {
@@ -24,7 +28,7 @@ function updateTaskList() {
     newTask.className = "task-item"; // Добавляем класс для анимации
 
     const pointButton = document.createElement("img");
-    pointButton.src = "src/public/images/done.png";
+    pointButton.src = doneImg;
     pointButton.alt = "Выполнено";
 
     pointButton.addEventListener("click", function () {
@@ -38,7 +42,7 @@ function updateTaskList() {
     });
 
     const changeButton = document.createElement("img");
-    changeButton.src = "src/public/images/pencil.png";
+    changeButton.src = pencilImg;
     changeButton.alt = "Измеить";
     changeButton.addEventListener("click", function () {
       changeButton.classList.add("img_change");
@@ -50,7 +54,7 @@ function updateTaskList() {
     });
 
     const deleteButton = document.createElement("img");
-    deleteButton.src = "toDo/src/public/images/delete.png";
+    deleteButton.src = deleteImg;
     deleteButton.alt = "Удалить";
     deleteButton.addEventListener("click", function () {
       newTask.className = "removing";
