@@ -25,7 +25,7 @@ let deleteAllButtonAdded = false;
 
 function deleteAll() {
   if (tasks.length > 2 && !deleteAllButtonAdded) {
-    const deleteAllButton = document.createElement("p");
+    const deleteAllButton = document.createElement("button");
     deleteAllButton.classList.add("deleteAllButton");
     deleteAllButton.innerHTML = "Очистить список";
     tasksWrapper.append(deleteAllButton);
@@ -58,7 +58,7 @@ function updateTaskList() {
       tasks[i].text = taskHolder.value;
     });
 
-    taskHolder.classList.add("taska");
+    taskHolder.classList.add("task");
 
     newTask.append(counter);
     newTask.append(taskHolder);
@@ -83,14 +83,10 @@ function updateTaskList() {
     const changeButton = document.createElement("img");
     changeButton.src = pencilImg;
     changeButton.alt = "Измеить";
-    changeButton.addEventListener("click", function () {
+    changeButton.addEventListener("click", () => {
       if (!tasks[i].completed) {
-        changeButton.classList.add("img_change");
         taskHolder.focus();
         taskHolder.value = taskHolder.value.trim();
-        if (newValue !== null) {
-        }
-        updateTaskList();
         tasks[i].text = taskHolder.value.trim();
       } else alert("Задача выполнена");
     });
@@ -128,9 +124,8 @@ addButton.addEventListener("click", addTask);
 const input = document.getElementById("taskInput");
 
 input.addEventListener("keydown", function (event) {
-  if (event.keyCode === 13) {
+  if (event.key === "Enter") {
     event.preventDefault();
-    // Код 13 соответствует клавише Enter
     addTask(); // Вызываем вашу функцию обработки события
   }
 });
@@ -142,9 +137,9 @@ const form = document.querySelector(".form");
 const tasksWrapper = document.querySelector(".tasks__wrapper");
 
 const themeChanger = document.querySelector(".theme");
-const bodyd = document.body;
+const body = document.body;
 themeChanger.addEventListener("click", function () {
-  bodyd.classList.toggle("black");
+  body.classList.toggle("black");
   form.classList.toggle("black");
   tasksWrapper.classList.toggle("black");
 });
