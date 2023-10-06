@@ -15,16 +15,55 @@ function addTask() {
   }
 }
 
+function holderTasks() {
+  if (tasks.length === 0) {
+    taskList.innerHTML = `<p class="zaglushka">Нет задач</p>`;
+  }
+}
+holderTasks();
+let deleteAllButtonAdded = false;
+
+function deleteAll() {
+  if (tasks.length > 2 && !deleteAllButtonAdded) {
+    const deleteAllButton = document.createElement("p");
+    deleteAllButton.classList.add("deleteAllButton");
+    deleteAllButton.innerHTML = "Очистить список";
+    tasksWrapper.append(deleteAllButton);
+    deleteAllButtonAdded = true;
+
+    deleteAllButton.addEventListener("click", function () {
+      tasks.splice(0, tasks.length);
+      deleteAllButton.outerHTML = "";
+      deleteAllButtonAdded = false;
+      updateTaskList();
+      holderTasks();
+    });
+  }
+}
+
 function updateTaskList() {
   const taskList = document.getElementById("taskList");
   taskList.innerHTML = "";
 
+  deleteAll();
   for (let i = 0; i < tasks.length; i++) {
-    const newTask = document.createElement("li");
-    const taskHolder = document.createElement("p");
+    const newTask = document.createElement("div");
+    const counter = document.createElement("p");
+    const taskHolder = document.createElement("input");
+    taskHolder.type = "text";
+    taskHolder.value = tasks[i].text;
+    taskHolder.className = "task-input";
 
+    taskHolder.addEventListener("input", function () {
+      tasks[i].text = taskHolder.value;
+    });
+
+    taskHolder.classList.add("taska");
+
+    newTask.append(counter);
     newTask.append(taskHolder);
-    taskHolder.textContent = `${i + 1} .${tasks[i].text}`;
+    counter.textContent = `${i + 1}.`;
+    taskHolder.value = `${tasks[i].text}`;
     newTask.className = "task-item"; // Добавляем класс для анимации
 
     const pointButton = document.createElement("img");
@@ -45,12 +84,15 @@ function updateTaskList() {
     changeButton.src = pencilImg;
     changeButton.alt = "Измеить";
     changeButton.addEventListener("click", function () {
-      changeButton.classList.add("img_change");
-      const newValue = prompt("Введите новое значение задачи");
-      if (newValue !== null) {
-        tasks[i].text = newValue;
+      if (!tasks[i].completed) {
+        changeButton.classList.add("img_change");
+        taskHolder.focus();
+        taskHolder.value = taskHolder.value.trim();
+        if (newValue !== null) {
+        }
         updateTaskList();
-      }
+        tasks[i].text = taskHolder.value.trim();
+      } else alert("Задача выполнена");
     });
 
     const deleteButton = document.createElement("img");
@@ -62,6 +104,7 @@ function updateTaskList() {
       setTimeout(function () {
         tasks.splice(i, 1);
         updateTaskList();
+        holderTasks();
       }, 600);
     });
 
@@ -82,6 +125,15 @@ function updateTaskList() {
 
 const addButton = document.getElementById("addTask");
 addButton.addEventListener("click", addTask);
+const input = document.getElementById("taskInput");
+
+input.addEventListener("keydown", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    // Код 13 соответствует клавише Enter
+    addTask(); // Вызываем вашу функцию обработки события
+  }
+});
 
 // Вызывайте updateTaskList() при загрузке страницы, если у вас есть сохраненные задачи
 // updateTaskList();
