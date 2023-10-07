@@ -83,16 +83,16 @@ img:hover {
 }
 
 .deleteAllButton {
+  padding: 10px 10px;
   text-transform: capitalize;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 30px;
-  font-weight: 900;
-  background: $bodyDark;
-  margin: 10px 100px;
-  border: 0.5px solid;
+  background: #008bff;
+  margin: 10px auto;
   border-radius: 3px;
+  box-shadow: 0px 0px 10px;
   &:hover {
     cursor: pointer;
   }
@@ -155,15 +155,14 @@ img:hover {
 #taskInput {
   padding: 5px;
   border: 1px solid #ccc;
-  // border-radius: 5px;
+  box-shadow: 0px 0px 10px;
   margin-right: 10px;
 }
 
 #addTask {
   background-color: #ad1515;
-  color: white;
   border: none;
-  // border-radius: 5px;
+  box-shadow: 0px 0px 10px;
   padding: 5px 10px;
   cursor: pointer;
 }
