@@ -218,7 +218,7 @@ img:hover {
   .wrapper {
     padding: 15px;
     min-width: 0;
-    width: 100;
+    width: 100%;
   }
 
   .deleteAllButton {
@@ -241,5 +241,8 @@ img:hover {
     padding: 0px;
     min-height: 800px;
     width: 100%;
+  }
+  #todoForm {
+    flex-direction: column;
   }
 }
