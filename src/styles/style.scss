@@ -28,80 +28,6 @@ body {
   max-width: 350px;
 }
 
-.black {
-  background-color: #ffffff;
-}
-
-.titleAndChangeTheme {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 10px 20px 10px;
-  font-size: xx-large;
-}
-
-.form__title {
-  font-weight: 900;
-}
-
-#todoForm {
-  margin: 10px;
-  border-radius: 0;
-}
-
-.theme {
-  width: 50px;
-  height: 50px;
-}
-
-.theme:hover {
-  opacity: 0.2;
-}
-
-img {
-  width: 20px;
-  height: 20px;
-  transition: all ease 0.2s;
-}
-
-img:hover {
-  cursor: pointer;
-  transform: scale(1.4);
-}
-
-.img_done {
-  border-radius: 50%;
-  background-color: #3fd13f;
-}
-
-.img_change {
-  background-color: rgba(225, 205, 78, 0);
-}
-
-.img_del {
-  border-radius: 50%;
-  background-color: rgb(230, 62, 62);
-}
-
-.deleteAllButton {
-  padding: 10px 10px;
-  text-transform: capitalize;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 30px;
-  background: #008bff;
-  margin: 10px auto;
-  border-radius: 3px;
-  box-shadow: 0px 0px 10px;
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.completed {
-  text-decoration: line-through;
-}
-
 .form {
   top: 10px;
   position: sticky;
@@ -112,6 +38,49 @@ img:hover {
   // width: 100%;
   margin: 10px;
   min-width: 100%;
+}
+
+.titleAndChangeTheme {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 10px 20px 10px;
+  font-size: xx-large;
+}
+
+#todoForm {
+  margin: 10px;
+  border-radius: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 23px;
+}
+
+#taskInput {
+  padding: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px;
+  width: 100%;
+}
+
+#addTask {
+  background-color: #ad1515;
+  border: none;
+  box-shadow: 0px 0px 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#addTask:hover {
+  background-color: #45a049;
+}
+
+.theme {
+  width: 50px;
+  height: 50px;
+}
+
+.theme:hover {
+  opacity: 0.2;
 }
 
 .tasks__wrapper {
@@ -150,25 +119,28 @@ img:hover {
   text-transform: capitalize;
 }
 
-/* Стили для кнопки удаления */
-/* Стили для поля ввода и кнопки добавления */
-#taskInput {
-  padding: 5px;
-  border: 1px solid #ccc;
-  box-shadow: 0px 0px 10px;
-  margin-right: 10px;
+img {
+  width: 20px;
+  height: 20px;
+  transition: all ease 0.2s;
 }
 
-#addTask {
-  background-color: #ad1515;
-  border: none;
-  box-shadow: 0px 0px 10px;
-  padding: 5px 10px;
+img:hover {
   cursor: pointer;
+  transform: scale(1.4);
 }
 
-#addTask:hover {
-  background-color: #45a049;
+.img_done {
+  border-radius: 50%;
+  background-color: #3fd13f;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.img_change {
+  background-color: rgba(225, 205, 78, 0);
 }
 
 .nonvis {
@@ -179,22 +151,13 @@ img:hover {
   background-color: #3fd13f;
 }
 
-.task-item {
-  opacity: 1;
+.img_del {
+  border-radius: 50%;
+  background-color: rgb(230, 62, 62);
 }
 
-.removing {
-  color: #060606;
-  box-shadow: 0px 0px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 5px 0;
-  padding: 10px;
-  background-color: $bodyDark;
-  border-radius: 5px;
-  transition: 1300ms;
-  transform: translateX(-300%);
+.task-item {
+  opacity: 1;
 }
 
 .task-item.appearing {
@@ -211,22 +174,63 @@ img:hover {
   background-color: #3fd13f;
 }
 
-.removing p {
-  min-width: 110px;
+.removing {
+  color: #060606;
+  box-shadow: 0px 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 0;
+  padding: 10px;
+  background-color: $bodyDark;
+  border-radius: 5px;
+  transition: 1300ms;
+  transform: translateX(-300%);
+}
+
+.deleteAllButton {
+  padding: 10px 10px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  background: #008bff;
+  margin: 10px auto;
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .black {
   background-color: #ffffff;
 }
-#todoForm {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 23px;
-}
 
-@media screen and (max-width: 400px) {
+/* Стили для кнопки удаления */
+/* Стили для поля ввода и кнопки добавления */
+
+@media screen and (max-width: 420px) {
+  body {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
   .wrapper {
-    max-width: 90%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .form {
+    box-shadow: 0px 10px 60px;
+    margin-top: 0px;
+    top: 0px;
+    width: 100%;
+  }
+
+  .form.black {
+    width: 100%;
   }
   .tasks__wrapper {
     padding: 0px;
@@ -236,14 +240,6 @@ img:hover {
   .tasks__wrapper.black {
     padding: 0px;
     min-height: 800px;
-    width: 100%;
-  }
-
-  .form {
-    width: 100%;
-  }
-
-  .form.black {
     width: 100%;
   }
 }
