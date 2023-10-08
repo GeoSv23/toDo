@@ -11,7 +11,9 @@ body {
   margin: 0px;
   padding: 20px;
   font-family: "Gilroy";
-  background-color: $bodyDark;
+  // background-color: $bodyDark;
+  background: $backgroundGradientWebkit;
+  background: $backgroundGradient;
   background-position: 0%;
   background-repeat: round;
   display: flex;
@@ -25,19 +27,18 @@ body {
   align-items: center;
   flex-direction: column;
   display: flex;
-  max-width: 350px;
+  // max-width: 350px;
+  min-width: 600px;
 }
 
 .form {
   top: 10px;
   position: sticky;
-
-  background-color: $blocksDark;
-  box-shadow: 0px 20px 60px;
-  // border-radius: 0px;
-  // width: 100%;
-  margin: 10px;
+  background-color: #fefeff;
+  // box-shadow: 0px 20px 60px;
   min-width: 100%;
+  border-radius: 10px 10px 0 0;
+  padding: 20px;
 }
 
 .titleAndChangeTheme {
@@ -48,26 +49,31 @@ body {
 }
 
 #todoForm {
-  margin: 10px;
-  border-radius: 0;
   display: flex;
-  flex-wrap: wrap;
   gap: 23px;
 }
 
 #taskInput {
-  padding: 5px;
+  padding: 20px;
   border: 1px solid #ccc;
-  box-shadow: 0px 0px 10px;
+  // box-shadow: 0px 0px 10px;
   width: 100%;
+  border-radius: 10px;
 }
 
 #addTask {
-  background-color: #ad1515;
+  background: $backgroundGradientWebkit;
+  background: $backgroundGradient;
+
+  color: #fefeff;
+  font-size: 18px;
+  font-weight: 400;
+
   border: none;
-  box-shadow: 0px 0px 10px;
+  border-radius: 10px;
   padding: 5px 10px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 #addTask:hover {
@@ -84,28 +90,27 @@ body {
 }
 
 .tasks__wrapper {
+  padding: 20px;
   z-index: 1;
   min-width: 100%;
-  box-shadow: 0px 20px 60px;
-  background-color: $blocksDark;
-  padding: 0px;
+  background-color: #fefeff;
   min-height: 500px;
-  margin: 10px;
+  border-radius: 0 0 10px 10px;
 }
 
 #taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   list-style-type: none;
-  margin: 10px;
 }
 
 .task-item {
   color: #060606;
-  box-shadow: 0px 0px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 5px 0;
-  padding: 10px;
+  padding: 13px 10px;
   background-color: $bodyDark;
   border-radius: 5px;
 }
@@ -120,6 +125,7 @@ body {
 }
 
 img {
+  margin-inline: 10px;
   width: 20px;
   height: 20px;
   transition: all ease 0.2s;
@@ -166,7 +172,8 @@ img:hover {
 }
 
 .task-input {
-  width: 110px;
+  margin-right: auto;
+  // width: 110px;
   background-color: $bodyDark;
 }
 
@@ -176,7 +183,7 @@ img:hover {
 
 .removing {
   color: #060606;
-  box-shadow: 0px 0px 10px;
+  // box-shadow: 0px 0px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -198,7 +205,7 @@ img:hover {
   background: #008bff;
   margin: 10px auto;
   border-radius: 3px;
-  box-shadow: 0px 0px 10px;
+  // box-shadow: 0px 0px 10px;
   &:hover {
     cursor: pointer;
   }
@@ -223,7 +230,7 @@ img:hover {
   }
 
   .form {
-    box-shadow: 0px 10px 60px;
+    // box-shadow: 0px 10px 60px;
     margin-top: 0px;
     top: 0px;
     width: 100%;
