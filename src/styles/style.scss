@@ -9,11 +9,9 @@
 body {
   border: 0.5px solid #000000;
   font-family: "Gilroy";
-  // background-color: $bodyDark;
   background: $backgroundGradientWebkit;
   background: $backgroundGradient;
   background-position: 0%;
-  // background-repeat: round;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,7 +115,6 @@ body {
   text-align: center;
   font-family: "Gilroy";
   font-weight: 900;
-  // text-transform: capitalize;
 }
 
 img {
