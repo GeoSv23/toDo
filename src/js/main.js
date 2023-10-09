@@ -2,7 +2,11 @@ import deleteImg from "@images/delete.png";
 import pencilImg from "@images/pencil.png";
 import doneImg from "@images/done.png";
 
-const tasks = [];
+const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+
+const tasks = savedTasks ?? [];
+
+const test = localStorage.setItem("test", JSON.stringify({ jora: "pidor" }));
 
 function addTask() {
   const input = document.getElementById("taskInput");
@@ -10,6 +14,7 @@ function addTask() {
 
   if (taskText !== "") {
     tasks.unshift({ text: taskText, completed: false, nonVisibility: false });
+    localStorage.setItem("tasks", JSON.stringify(tasks));
     input.value = "";
     updateTaskList();
   }
@@ -35,9 +40,15 @@ function deleteAll() {
       tasks.splice(0, tasks.length);
       deleteAllButton.outerHTML = "";
       deleteAllButtonAdded = false;
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+
       updateTaskList();
       holderTasks();
     });
+  } else if (tasks.length < 3 && deleteAllButtonAdded) {
+    const deleteAllButton = document.querySelector(".deleteAllButton");
+    deleteAllButton.outerHTML = "";
+    deleteAllButtonAdded = false;
   }
 }
 
@@ -77,6 +88,7 @@ function updateTaskList() {
         tasks[i].nonVisibility = true;
         let position = tasks.splice(i, 1);
         tasks.push(position[0]);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
       }
       updateTaskList();
     });
@@ -90,6 +102,7 @@ function updateTaskList() {
         taskHolder.focus();
         taskHolder.value = taskHolder.value.trim();
         tasks[i].text = taskHolder.value.trim();
+        localStorage.setItem("tasks", JSON.stringify(tasks));
       } else alert("Задача выполнена");
     });
 
@@ -103,6 +116,7 @@ function updateTaskList() {
         tasks.splice(i, 1);
         updateTaskList();
         holderTasks();
+        localStorage.setItem("tasks", JSON.stringify(tasks));
       }, 600);
     });
 
@@ -138,11 +152,4 @@ input.addEventListener("keydown", function (event) {
 const wrapper = document.querySelector(".wrapper");
 const form = document.querySelector(".form");
 const tasksWrapper = document.querySelector(".tasks__wrapper");
-
-const themeChanger = document.querySelector(".theme");
-const body = document.body;
-themeChanger.addEventListener("click", function () {
-  body.classList.toggle("black");
-  form.classList.toggle("black");
-  tasksWrapper.classList.toggle("black");
-});
+updateTaskList();

@@ -7,11 +7,9 @@
   font-weight: 900;
 }
 body {
-  border: 0.5px solid #000000;
   font-family: "Gilroy";
   background: $backgroundGradientWebkit;
   background: $backgroundGradient;
-  background-position: 0%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,7 +112,6 @@ body {
   padding: 10px;
   text-align: center;
   font-family: "Gilroy";
-  font-weight: 900;
 }
 
 img {
@@ -122,6 +119,12 @@ img {
   width: 20px;
   height: 20px;
   transition: all ease 0.2s;
+}
+
+.theme:hover {
+  opacity: 1;
+  cursor: default;
+  transform: none;
 }
 
 img:hover {
@@ -142,17 +145,17 @@ img:hover {
   background-color: rgba(225, 205, 78, 0);
 }
 
+.img_del {
+  border-radius: 50%;
+  background-color: rgb(230, 62, 62);
+}
+
 .nonvis {
   opacity: 0.2;
 }
 
 .task-item.green {
   background-color: #3fd13f;
-}
-
-.img_del {
-  border-radius: 50%;
-  background-color: rgb(230, 62, 62);
 }
 
 .task-item {
