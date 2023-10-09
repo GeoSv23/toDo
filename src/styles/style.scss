@@ -7,10 +7,8 @@
   font-weight: 900;
 }
 body {
-  border: 0.5px solid #000000;
   margin: 0px;
   font-family: "Gilroy";
-  // background-color: $bodyDark;
   background: $backgroundGradientWebkit;
   background: $backgroundGradient;
   background-position: 0%;
@@ -32,7 +30,6 @@ body {
 .form {
   top: 10px;
   background-color: #fefeff;
-  // box-shadow: 0px 20px 60px;
   min-width: 100%;
   border-radius: 10px 10px 0 0;
   padding: 20px;
@@ -53,7 +50,6 @@ body {
 #taskInput {
   padding: 20px;
   border: 1px solid #ccc;
-  // box-shadow: 0px 0px 10px;
   width: 100%;
   border-radius: 10px;
 }
@@ -61,11 +57,9 @@ body {
 #addTask {
   background: $backgroundGradientWebkit;
   background: $backgroundGradient;
-
   color: #fefeff;
   font-size: 18px;
   font-weight: 400;
-
   border: none;
   border-radius: 10px;
   padding: 5px 10px;
@@ -166,6 +160,10 @@ img:hover {
   opacity: 1;
 }
 
+.counter {
+  font-size: 18px;
+}
+
 .task-item.appearing {
   opacity: 1;
   transform: translateY(0);
@@ -223,6 +221,7 @@ img:hover {
 
   .deleteAllButton {
     margin-inline: 0;
+    height: 50px;
   }
   .form {
     margin-top: 0px;
@@ -244,5 +243,11 @@ img:hover {
   }
   #todoForm {
     flex-direction: column;
+  }
+
+  #addTask {
+    align-self: flex-end;
+    height: 50px;
+    width: 170px;
   }
 }

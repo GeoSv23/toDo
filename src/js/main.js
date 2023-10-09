@@ -49,6 +49,7 @@ function updateTaskList() {
   for (let i = 0; i < tasks.length; i++) {
     const newTask = document.createElement("div");
     const counter = document.createElement("p");
+    counter.classList.add("counter");
     const taskHolder = document.createElement("input");
     taskHolder.type = "text";
     taskHolder.value = tasks[i].text;
@@ -64,7 +65,7 @@ function updateTaskList() {
     newTask.append(taskHolder);
     counter.textContent = `${i + 1}.`;
     taskHolder.value = `${tasks[i].text}`;
-    newTask.className = "task-item"; // Добавляем класс для анимации
+    newTask.className = "task-item";
 
     const pointButton = document.createElement("img");
     pointButton.src = doneImg;
@@ -106,7 +107,10 @@ function updateTaskList() {
     });
 
     if (tasks[i].completed && tasks[i].nonVisibility) {
-      taskHolder.classList.add("completed"); // Добавляем класс для перечеркивания текста
+      counter.innerHTML = "#";
+      counter.classList.add("completed");
+      counter.classList.add("nonvis");
+      taskHolder.classList.add("completed");
       taskHolder.classList.add("nonvis");
       pointButton.classList.add("img_done");
       const parentElement = taskHolder.parentNode;
@@ -127,13 +131,10 @@ const input = document.getElementById("taskInput");
 input.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
-    // Код 13 соответствует клавише Enter
-    addTask(); // Вызываем вашу функцию обработки события
+    addTask();
   }
 });
 
-// Вызывайте updateTaskList() при загрузке страницы, если у вас есть сохраненные задачи
-// updateTaskList();
 const wrapper = document.querySelector(".wrapper");
 const form = document.querySelector(".form");
 const tasksWrapper = document.querySelector(".tasks__wrapper");
