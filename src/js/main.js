@@ -17,7 +17,7 @@ function addTask() {
 
 function holderTasks() {
   if (tasks.length === 0) {
-    taskList.innerHTML = `<p class="zaglushka">Нет задач</p>`;
+    taskList.innerHTML = `<p class="zaglushka">Список задач пуст</p>`;
   }
 }
 holderTasks();
