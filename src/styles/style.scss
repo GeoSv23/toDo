@@ -7,16 +7,18 @@
   font-weight: 900;
 }
 body {
-  margin: 0px;
+  border: 0.5px solid #000000;
   font-family: "Gilroy";
+  // background-color: $bodyDark;
   background: $backgroundGradientWebkit;
   background: $backgroundGradient;
   background-position: 0%;
-  background-repeat: round;
+  // background-repeat: round;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 1000px;
+  height: 100%;
+  padding-top: 30px;
 }
 
 .wrapper {
@@ -115,7 +117,7 @@ body {
   text-align: center;
   font-family: "Gilroy";
   font-weight: 900;
-  text-transform: capitalize;
+  // text-transform: capitalize;
 }
 
 img {
@@ -198,6 +200,7 @@ img:hover {
   color: #fefeff;
   padding: 10px;
   border-radius: 10px;
+  font-size: 18px;
   &:hover {
     cursor: pointer;
   }
@@ -232,8 +235,13 @@ img:hover {
   .form.black {
     width: 100%;
   }
+
+  #addTask {
+    margin-left: auto;
+    padding: 10px 10px;
+  }
   .tasks__wrapper {
-    min-height: 800px;
+    min-height: 300px;
     width: 100%;
   }
   .tasks__wrapper.black {
